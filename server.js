@@ -11,7 +11,7 @@ const bodyParser = require('body-parser')
 const config = require('./app/Config')
 
 // Connect to database
-mongoose.connect(config.DB)
+mongoose.connect(process.env.MONGODB_URI || config.MONGODB_URI)
 
 // Sends static files  from the public path directory
 app.use(express.static(path.join(__dirname, '/public')))
@@ -22,7 +22,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-var port = config.APP_PORT || 4000
+var port = process.env.APP_PORT || config.APP_PORT
 app.listen(port) // Listen on port defined in config file
 
 console.log('App listening on port ' + port)

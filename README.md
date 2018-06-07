@@ -1,6 +1,6 @@
-## Todo List.
+## Aplicativo teste para vaga de Front-End da BeXs.
 
-Build a todo list with NodeJs, VueJs & MonogDB
+Acesso Aqui
 
 **Run**
 
