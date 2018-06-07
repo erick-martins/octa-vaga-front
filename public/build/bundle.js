@@ -963,6 +963,17 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -12735,7 +12746,7 @@ var render = function() {
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "Input title",
+                                  placeholder: "Field title",
                                   id: "component-title-" + component.id
                                 },
                                 domProps: { value: component.title },
@@ -12771,17 +12782,17 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: component.title,
-                                    expression: "component.title"
+                                    value: component.name,
+                                    expression: "component.name"
                                   }
                                 ],
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "Input title",
+                                  placeholder: "Field name",
                                   id: "component-name-" + component.id
                                 },
-                                domProps: { value: component.title },
+                                domProps: { value: component.name },
                                 on: {
                                   input: function($event) {
                                     if ($event.target.composing) {
@@ -12789,7 +12800,7 @@ var render = function() {
                                     }
                                     _vm.$set(
                                       component,
-                                      "title",
+                                      "name",
                                       $event.target.value
                                     )
                                   }
@@ -12854,16 +12865,40 @@ var render = function() {
                                     _vm._v("Text")
                                   ]),
                                   _vm._v(" "),
-                                  _c("option", { attrs: { value: "tel" } }, [
-                                    _vm._v("tel")
+                                  _c("option", { attrs: { value: "number" } }, [
+                                    _vm._v("Number")
                                   ]),
                                   _vm._v(" "),
                                   _c("option", { attrs: { value: "email" } }, [
-                                    _vm._v("email")
+                                    _vm._v("Email")
                                   ]),
                                   _vm._v(" "),
-                                  _c("option", { attrs: { value: "phone" } }, [
-                                    _vm._v("phone")
+                                  _c("option", { attrs: { value: "url" } }, [
+                                    _vm._v("URL")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "tel" } }, [
+                                    _vm._v("Phone Number")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "date" } }, [
+                                    _vm._v("Date")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "time" } }, [
+                                    _vm._v("Time")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "month" } }, [
+                                    _vm._v("Month")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "week" } }, [
+                                    _vm._v("Week")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("option", { attrs: { value: "range" } }, [
+                                    _vm._v("Range")
                                   ]),
                                   _vm._v(" "),
                                   _c(
@@ -12905,7 +12940,8 @@ var render = function() {
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "Input placeholder",
+                                  placeholder:
+                                    "Enter the background color here",
                                   id:
                                     "component-label-background-" + component.id
                                 },
@@ -12953,7 +12989,7 @@ var render = function() {
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "Input title",
+                                  placeholder: "Enter the text color here",
                                   id: "component-label-color-" + component.id
                                 },
                                 domProps: {
@@ -13003,7 +13039,8 @@ var render = function() {
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "Input placeholder",
+                                  placeholder:
+                                    "Enter the background color here",
                                   id: "component-background-" + component.id
                                 },
                                 domProps: {
@@ -13051,7 +13088,7 @@ var render = function() {
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "text",
-                                  placeholder: "Input name",
+                                  placeholder: "Enter the text color here",
                                   id: "component-color-" + component.id
                                 },
                                 domProps: {
@@ -13221,7 +13258,7 @@ var render = function() {
                                 _c(
                                   "small",
                                   { staticClass: "form-text text-muted" },
-                                  [_vm._v('Separate items using comma ";"')]
+                                  [_vm._v('Separate items using semicolon ";"')]
                                 )
                               ])
                             ]),
@@ -13251,7 +13288,7 @@ var render = function() {
                                   staticClass: "form-control",
                                   attrs: {
                                     type: "text",
-                                    placeholder: "Input title",
+                                    placeholder: "Field title",
                                     id: "component-title-" + component.id
                                   },
                                   domProps: { value: component.title },
@@ -13289,8 +13326,8 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: component.title,
-                                      expression: "component.title"
+                                      value: component.name,
+                                      expression: "component.name"
                                     }
                                   ],
                                   staticClass: "form-control",
@@ -13299,7 +13336,7 @@ var render = function() {
                                     placeholder: "Checkboxes' name",
                                     id: "component-name-" + component.id
                                   },
-                                  domProps: { value: component.title },
+                                  domProps: { value: component.name },
                                   on: {
                                     input: function($event) {
                                       if ($event.target.composing) {
@@ -13307,7 +13344,7 @@ var render = function() {
                                       }
                                       _vm.$set(
                                         component,
-                                        "title",
+                                        "name",
                                         $event.target.value
                                       )
                                     }
@@ -13346,7 +13383,8 @@ var render = function() {
                                   staticClass: "form-control",
                                   attrs: {
                                     type: "text",
-                                    placeholder: "Input placeholder",
+                                    placeholder:
+                                      "Enter the background color here",
                                     id:
                                       "component-label-background-" +
                                       component.id
@@ -13395,7 +13433,7 @@ var render = function() {
                                   staticClass: "form-control",
                                   attrs: {
                                     type: "text",
-                                    placeholder: "Input title",
+                                    placeholder: "Enter the text color here",
                                     id: "component-label-color-" + component.id
                                   },
                                   domProps: {
@@ -13446,7 +13484,8 @@ var render = function() {
                                   staticClass: "form-control",
                                   attrs: {
                                     type: "text",
-                                    placeholder: "Input placeholder",
+                                    placeholder:
+                                      "Enter the background color here",
                                     id: "component-background-" + component.id
                                   },
                                   domProps: {
@@ -13494,7 +13533,7 @@ var render = function() {
                                   staticClass: "form-control",
                                   attrs: {
                                     type: "text",
-                                    placeholder: "Input title",
+                                    placeholder: "Enter the text color here",
                                     id: "component-color-" + component.id
                                   },
                                   domProps: {
@@ -13707,8 +13746,8 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: component.title,
-                                      expression: "component.title"
+                                      value: component.name,
+                                      expression: "component.name  "
                                     }
                                   ],
                                   staticClass: "form-control",
@@ -13717,7 +13756,7 @@ var render = function() {
                                     placeholder: "Button name",
                                     id: "component-name-" + component.id
                                   },
-                                  domProps: { value: component.title },
+                                  domProps: { value: component.name },
                                   on: {
                                     input: function($event) {
                                       if ($event.target.composing) {
@@ -13725,7 +13764,7 @@ var render = function() {
                                       }
                                       _vm.$set(
                                         component,
-                                        "title",
+                                        "name  ",
                                         $event.target.value
                                       )
                                     }
@@ -13794,6 +13833,12 @@ var render = function() {
                                     _vm._v(" "),
                                     _c(
                                       "option",
+                                      { attrs: { value: "reset" } },
+                                      [_vm._v("Reset")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "option",
                                       { attrs: { value: "submit" } },
                                       [_vm._v("Submit")]
                                     )
@@ -13846,8 +13891,7 @@ var render = function() {
                                           type: "radio",
                                           name: "skin",
                                           id: "skin-primary",
-                                          value: "primary",
-                                          autocomplete: "off"
+                                          value: "primary"
                                         },
                                         domProps: {
                                           checked: _vm._q(
@@ -13892,8 +13936,7 @@ var render = function() {
                                           type: "radio",
                                           name: "skin",
                                           id: "skin-secundary",
-                                          value: "secundary",
-                                          autocomplete: "off"
+                                          value: "secundary"
                                         },
                                         domProps: {
                                           checked: _vm._q(
@@ -13937,9 +13980,8 @@ var render = function() {
                                         attrs: {
                                           type: "radio",
                                           name: "skin",
-                                          id: "skin-primary",
-                                          value: "success",
-                                          autocomplete: "off"
+                                          id: "skin-success",
+                                          value: "success"
                                         },
                                         domProps: {
                                           checked: _vm._q(
@@ -13983,9 +14025,8 @@ var render = function() {
                                         attrs: {
                                           type: "radio",
                                           name: "skin",
-                                          id: "skin-primary",
-                                          value: "danger",
-                                          autocomplete: "off"
+                                          id: "skin-danger",
+                                          value: "danger"
                                         },
                                         domProps: {
                                           checked: _vm._q(
@@ -14029,9 +14070,8 @@ var render = function() {
                                         attrs: {
                                           type: "radio",
                                           name: "skin",
-                                          id: "skin-primary",
-                                          value: "warning",
-                                          autocomplete: "off"
+                                          id: "skin-warning",
+                                          value: "warning"
                                         },
                                         domProps: {
                                           checked: _vm._q(
@@ -14075,9 +14115,8 @@ var render = function() {
                                         attrs: {
                                           type: "radio",
                                           name: "skin",
-                                          id: "skin-primary",
-                                          value: "info",
-                                          autocomplete: "off"
+                                          id: "skin-info",
+                                          value: "info"
                                         },
                                         domProps: {
                                           checked: _vm._q(
@@ -14117,9 +14156,8 @@ var render = function() {
                                         attrs: {
                                           type: "radio",
                                           name: "skin",
-                                          id: "skin-primary",
-                                          value: "dark",
-                                          autocomplete: "off"
+                                          id: "skin-dark",
+                                          value: "dark"
                                         },
                                         domProps: {
                                           checked: _vm._q(

@@ -26,7 +26,8 @@
     </div>
     <draggable v-model="dropComponents" class="components-drop" :options="dropOptions">
       <div v-for="(component, index) in dropComponents" :key="component.id">
-        <!-- INPUTS -->
+
+        <!-- INPUT COMPONENT -->
         <div v-if="component.type == 'input'" class="form-component">
           <div :class="'component-panel component-panel-' +component.editing">
             <a v-if="!component.editing" class="component-panel-edit" @click="component.editing = true"><i class="fas fa-edit"></i></a>
@@ -44,15 +45,15 @@
               <div class="form-group row">
                 <label :for="'component-title-' +component.id" class="col-sm-4 col-form-label">Input title</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input title"
+                  <input class="form-control" type="text" placeholder="Field title"
                          v-model="component.title" :id="'component-title-' +component.id">
                 </div>
               </div>
               <div class="form-group row">
                 <label :for="'component-name-' +component.id" class="col-sm-4 col-form-label">Name</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input title"
-                         v-model="component.title" :id="'component-name-' +component.id">
+                  <input class="form-control" type="text" placeholder="Field name"
+                         v-model="component.name" :id="'component-name-' +component.id">
                 </div>
               </div>
               <div class="form-group row">
@@ -61,9 +62,15 @@
                   <select class="form-control" v-model="component.inputType"
                          :id="'component-inputtype-' +component.id">
                          <option value="text">Text</option>
-                         <option value="tel">tel</option>
-                         <option value="email">email</option>
-                         <option value="phone">phone</option>
+                         <option value="number">Number</option>
+                         <option value="email">Email</option>
+                         <option value="url">URL</option>
+                         <option value="tel">Phone Number</option>
+                         <option value="date">Date</option>
+                         <option value="time">Time</option>
+                         <option value="month">Month</option>
+                         <option value="week">Week</option>
+                         <option value="range">Range</option>
                          <option value="password">Password</option>
                   </select>
                 </div>
@@ -72,14 +79,14 @@
               <div class="form-group row">
                 <label :for="'component-label-background-' +component.id" class="col-sm-4 col-form-label">Background Color</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input placeholder" v-model="component.style.label.background"
+                  <input class="form-control" type="text" placeholder="Enter the background color here" v-model="component.style.label.background"
                          :id="'component-label-background-' +component.id">
                 </div>
               </div>
               <div class="form-group row">
                 <label :for="'component-label-color-' +component.id" class="col-sm-4 col-form-label">Text Color</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input title" v-model="component.style.label.color"
+                  <input class="form-control" type="text" placeholder="Enter the text color here" v-model="component.style.label.color"
                          :id="'component-label-color-' +component.id">
                 </div>
               </div>
@@ -87,14 +94,14 @@
               <div class="form-group row">
                 <label :for="'component-background-' +component.id" class="col-sm-4 col-form-label">Background Color</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input placeholder" v-model="component.style.component.background"
+                  <input class="form-control" type="text" placeholder="Enter the background color here" v-model="component.style.component.background"
                          :id="'component-background-' +component.id">
                 </div>
               </div>
               <div class="form-group row">
                 <label :for="'component-color-' +component.id" class="col-sm-4 col-form-label">Text Color</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input name" v-model="component.style.component.color"
+                  <input class="form-control" type="text" placeholder="Enter the text color here" v-model="component.style.component.color"
                          :id="'component-color-' +component.id">
                 </div>
               </div>
@@ -105,7 +112,8 @@
             <input :type="component.inputType" :name="component.name" class="form-control" :placeholder="component.placeholder" :id="'input-' +component.id" :style="'background-color:' + component.style.component.background + ';color:' + component.style.component.color + ';'">
           </div>
         </div>
-        <!-- CHECKBOXES -->
+
+        <!-- CHECKBOX COMPONENT -->
         <div v-else-if="component.type == 'checkbox-list'" class="form-component">
           <div :class="'component-panel component-panel-' +component.editing">
             <a v-if="!component.editing" class="component-panel-edit" @click="component.editing = true"><i class="fas fa-edit"></i></a>
@@ -118,13 +126,13 @@
                 <div class="col-sm-8">
                   <input class="form-control" type="text" placeholder="Input placeholder"
                          v-model="component.items" :id="'component-placeholder-' +component.id">
-                  <small class="form-text text-muted">Separate items using comma ";"</small>
+                  <small class="form-text text-muted">Separate items using semicolon ";"</small>
                 </div>
               </div>
               <div class="form-group row">
                 <label :for="'component-title-' +component.id" class="col-sm-4 col-form-label">Input title</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input title"
+                  <input class="form-control" type="text" placeholder="Field title"
                          v-model="component.title" :id="'component-title-' +component.id">
                 </div>
               </div>
@@ -132,21 +140,21 @@
                 <label :for="'component-name-' +component.id" class="col-sm-4 col-form-label">Name</label>
                 <div class="col-sm-8">
                   <input class="form-control" type="text" placeholder="Checkboxes' name"
-                         v-model="component.title" :id="'component-name-' +component.id">
+                         v-model="component.name" :id="'component-name-' +component.id">
                 </div>
               </div>
               <strong>Label</strong>
               <div class="form-group row">
                 <label :for="'component-label-background-' +component.id" class="col-sm-4 col-form-label">Background Color</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input placeholder" v-model="component.style.label.background"
+                  <input class="form-control" type="text" placeholder="Enter the background color here" v-model="component.style.label.background"
                          :id="'component-label-background-' +component.id">
                 </div>
               </div>
               <div class="form-group row">
                 <label :for="'component-label-color-' +component.id" class="col-sm-4 col-form-label">Text Color</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input title" v-model="component.style.label.color"
+                  <input class="form-control" type="text" placeholder="Enter the text color here" v-model="component.style.label.color"
                          :id="'component-label-color-' +component.id">
                 </div>
               </div>
@@ -154,14 +162,14 @@
               <div class="form-group row">
                 <label :for="'component-background-' +component.id" class="col-sm-4 col-form-label">Background Color</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input placeholder" v-model="component.style.component.background"
+                  <input class="form-control" type="text" placeholder="Enter the background color here" v-model="component.style.component.background"
                          :id="'component-background-' +component.id">
                 </div>
               </div>
               <div class="form-group row">
                 <label :for="'component-color-' +component.id" class="col-sm-4 col-form-label">Text Color</label>
                 <div class="col-sm-8">
-                  <input class="form-control" type="text" placeholder="Input title" v-model="component.style.component.color"
+                  <input class="form-control" type="text" placeholder="Enter the text color here" v-model="component.style.component.color"
                          :id="'component-color-' +component.id">
                 </div>
               </div>
@@ -175,7 +183,9 @@
             </div>
           </div>
         </div>
-        <!-- BUTTON -->
+
+
+        <!-- BUTTON COMPONENT -->
         <div v-else class="form-component">
           <div :class="'component-panel component-panel-' +component.editing">
             <a v-if="!component.editing" class="component-panel-edit" @click="component.editing = true"><i class="fas fa-edit"></i></a>
@@ -194,7 +204,7 @@
                 <label :for="'component-name-' +component.id" class="col-sm-4 col-form-label">Name</label>
                 <div class="col-sm-8">
                   <input class="form-control" type="text" placeholder="Button name"
-                         v-model="component.title" :id="'component-name-' +component.id">
+                         v-model="component.name  " :id="'component-name-' +component.id">
                 </div>
               </div>
               <div class="form-group row">
@@ -203,6 +213,7 @@
                   <select class="form-control" v-model="component.inputType"
                          :id="'component-inputtype-' +component.id">
                          <option value="button">Normal</option>
+                         <option value="reset">Reset</option>
                          <option value="submit">Submit</option>
                   </select>
                 </div>
@@ -212,25 +223,25 @@
                 <label :for="'component-skin-' +component.id" class="col-sm-4 col-form-label">Skin</label>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label :class="'btn btn-secondary ' + (component.skin == 'primary' ? 'active' : '')">
-                    <input type="radio" name="skin" id="skin-primary" value="primary" autocomplete="off" v-model="component.skin"> primary
+                    <input type="radio" name="skin" id="skin-primary" value="primary" v-model="component.skin"> primary
                   </label>
                   <label :class="'btn btn-secondary ' + (component.skin == 'secondary' ? 'active' : '')">
-                    <input type="radio" name="skin" id="skin-secundary" value="secundary" autocomplete="off" v-model="component.skin"> secundary
+                    <input type="radio" name="skin" id="skin-secundary" value="secundary" v-model="component.skin"> secundary
                   </label>
                   <label :class="'btn btn-secondary ' + (component.skin == 'success' ? 'active' : '')">
-                    <input type="radio" name="skin" id="skin-primary" value="success" autocomplete="off" v-model="component.skin"> success
+                    <input type="radio" name="skin" id="skin-success" value="success" v-model="component.skin"> success
                   </label>
                   <label :class="'btn btn-secondary ' + (component.skin == 'danger' ? 'active' : '')">
-                    <input type="radio" name="skin" id="skin-primary" value="danger" autocomplete="off" v-model="component.skin"> danger
+                    <input type="radio" name="skin" id="skin-danger" value="danger" v-model="component.skin"> danger
                   </label>
                   <label :class="'btn btn-secondary ' + (component.skin == 'warning' ? 'active' : '')">
-                    <input type="radio" name="skin" id="skin-primary" value="warning" autocomplete="off" v-model="component.skin"> warning
+                    <input type="radio" name="skin" id="skin-warning" value="warning" v-model="component.skin"> warning
                   </label>
                   <label :class="'btn btn-secondary ' + (component.skin == 'info' ? 'active' : '')">
-                    <input type="radio" name="skin" id="skin-primary" value="info" autocomplete="off" v-model="component.skin"> info
+                    <input type="radio" name="skin" id="skin-info" value="info" v-model="component.skin"> info
                   </label>
                   <label :class="'btn btn-secondary ' + (component.skin == 'dark' ? 'active' : '')">
-                    <input type="radio" name="skin" id="skin-primary" value="dark" autocomplete="off" v-model="component.skin"> dark
+                    <input type="radio" name="skin" id="skin-dark" value="dark" v-model="component.skin"> dark
                   </label>
                 </div>
               </div>

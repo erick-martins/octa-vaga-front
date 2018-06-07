@@ -47,7 +47,7 @@
 }
 
 .component-panel {
-    background-color: #388ec8;
+    background-color: #4c4e54;
     color: #FFF;
     border-radius: 10px 10px 0px 0px;
     padding: 0px 10px;
@@ -116,7 +116,7 @@ border: 1px dashed #CCC;
     padding: 10px;
     padding-left: 0px;
     margin-top: -80px;
-    background: #388ec8;
+    background: #4c4e54;
     margin-left: -95px;
     text-align: right;
 }
