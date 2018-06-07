@@ -22,10 +22,10 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-var port = process.env.APP_PORT || config.APP_PORT
-app.listen(port) // Listen on port defined in config file
-
-console.log('App listening on port ' + port)
+var port = process.env.PORT || config.APP_PORT
+app.listen(port, function() {
+  console.log('Listening on ' + port);
+})
 
 var todoRoutes = require('./app/Routes')
 

@@ -1,6 +1,6 @@
 ## Aplicativo teste para vaga de Front-End da BeXs.
 
-Acesso Aqui
+Acesso Aqui: https://erick-octa-vaga-front.herokuapp.com
 
 **Run**
 
@@ -16,4 +16,4 @@ npm run build
 
 ```
 
-Navigate to http://localhost:4000
+Acesso Local http://localhost:4000
