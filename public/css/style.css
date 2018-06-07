@@ -1,0 +1,36 @@
+droparea {
+    width: 100%;
+    height: 100%;
+    background: #CCC;
+    display: block;
+    padding-left: 180px;
+    position: absolute;
+    z-index: 1;
+}
+.components {
+    padding: 20px;
+}
+.component-item {
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #CCC;
+    border-radius: 7px;
+    background-color: #388ec8;
+    color: #FFF;
+}
+.component-item i {
+    display: block;
+    font-size: 40px;
+}
+.sidebar img {
+    max-width: 180px;
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+}
+.sidebar-logo {
+    padding: 20px;
+    border-bottom: 1px solid #f5f5f5;
+}
